@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+    <div class="container-fluid">
+        <h3>Club News</h3>
+        <ul>
+            {% for post in object_list %}
+            <li><a href="{% url 'newsdetail' post.pk %}">{{ post.title }}</a> - {{ post.author }}
+            <br/>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

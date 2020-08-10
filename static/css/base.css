@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/another-homepage-image.jpg') no-repeat center center fixed;
+    background: url('/media/cropped-sg-homepage.png') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -25,6 +25,7 @@ body {
 
 .logo-font {
     text-transform: uppercase;
+    color: #0b0414;
 }
 
 .main-logo-link {
@@ -55,6 +56,60 @@ body {
     color: white !important;
 }
 
+.btn-darkgreen {
+    background: #003d00;
+    color: white;
+}
+
+.btn-outline-darkgreen {
+    background: white;
+    color: #003d00 !important; /* use important to override link colors for <a> elements */
+    border: 1px solid #003d00;
+}
+
+.btn-outline-darkgreen:hover,
+.btn-outline-darkgreen:active,
+.btn-outline-darkgreen:focus {
+    background: #003d00;
+    color: white !important;
+}
+
+.btn-camoblue {
+    background: #FFFFFF;
+    color: #0b0414;
+}
+
+.btn-outline-camoblue {
+    background: #0b0414;
+    color: white !important; /* use important to override link colors for <a> elements */
+    border: 1px solid #0b0414;
+}
+
+.btn-outline-camoblue:hover,
+.btn-outline-camoblue:active,
+.btn-outline-camoblue:focus {
+    background: #FFFFFF;
+    color: #0b0414 !important;
+}
+
+.btn-white {
+    background: #FFFFFF;
+    color: #0b0414;
+}
+
+.btn-outline-white {
+    background: white;
+    color: #003d00 !important; /* use important to override link colors for <a> elements */
+    border: 1px solid #FFFFFF;
+}
+
+.btn-outline-white:hover,
+.btn-outline-white:active,
+.btn-outline-white:focus {
+    background: #FFFFFF;
+    color: #003d00 !important;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -67,6 +122,18 @@ body {
 
 .text-black {
     color: #000 !important;
+}
+
+.text-white {
+    color: #FFFFFF !important;    
+}
+
+.text-darkgreen {
+    color: #003d00 !important;
+}
+
+.text-camoblue {
+    color: #0b0414 !important;
 }
 
 .border-black {
