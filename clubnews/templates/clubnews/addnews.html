@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% load static %} {% block page_header %}
+{% block extra_title %}
+    - Add News
+{% endblock %}
+
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %} 
+{% block content %}
+<div class="camo-overlay"></div>
+    <div class="row">
+        <div class="col">
+            <div class="container-fluid mx-auto" style="color: #fafafa;">
+                <h3 style="text-align: center;">Add News</h3>
+                <br />
+                <div class="row">
+                    <div class="col-xs-hidden col-md-2">
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+                        <div class="form-group">
+                            <form method="POST">
+                                {% csrf_token  %}
+                                {{ form.as_p }}
+                                <br />
+                                <div class="mt-1">
+                                    <button class="btn btn-success btn-large">Add News</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        
+    <div>
+</div>
+    
+{% endblock %}

@@ -1,5 +1,6 @@
 from django.db import models # noqa
 from django.contrib.auth.models import User
+from django.urls import reverse
 import datetime
 
 
@@ -19,6 +20,8 @@ class Category(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
+    tab_title = models.CharField(max_length=255, default="Club News")
+    header_image = models.ImageField(null=True, blank=True, upload_to="media/club_images/") # noqa
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
     date = models.DateField(("Date"), default=datetime.date.today)
@@ -26,3 +29,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title + '|' + str(self.author)
+
+    def get_absolute_url(self):
+        return reverse('newsdetail', args=(str(self.id)))
