@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% load static %} {% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %} {% block content %}
+<div class="camo-overlay"></div>
+<div class="container-fluid">
+    <h3 style="text-align: center; color: #fafafa;">Fixtures</h3>
+    <ul>
+        <div class="row">
+            <div class="col-xs-hidden col-md-2"></div>
+            <div class="col-md-8">
+                {% for post in object_list %}
+                <div class="card ml-2 mt-3">                    
+                    <div class="card-body">
+                    <!--<a class="text-decoration-none" href=""></a>-->
+                    {% if post.result != '' %}
+                    <h4 class="card-text" style="font-weight: 800; color: #000000;">Final Score: {{ post.result }}                  
+                    </h4>
+                    {% else %}
+                    <h4 class="card-text" style="font-weight: 800; color: #000000;">{{ post.fixture }}                  
+                    </h4>
+                    {% endif %}
+                    <small>{{ post.date }} at {{ post.time }}</small>
+                    <br />
+                    {% if request.user.is_superuser %}
+                    <a href="{% url 'editfixtures' post.pk %}" class="button btn-warning btn-rounded">
+                        <i class="fas fa-edit mr-1"></i>Edit
+                    </a>
+                    <a href="{% url 'deletefixtures' post.pk %}" class="button btn-danger ml-2 btn-rounded">
+                        <i class="fas fa-trash mr-1"></i>Delete
+                    </a>
+                {% endif %}
+                <footer class="muted">Venue: {{ post.venue }}</footer>
+                <footer class="muted">Competition: {{ post.competition }}</footer>
+          </div>
+        </div>
+
+        <br />
+        {% endfor %}
+            </div>
+        </div>
+    </ul>
+</div>
+
+{% endblock %}

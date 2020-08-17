@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% load static %} {% block page_header %}
+{% block extra_title %}
+     
+{% endblock %}
+
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %} 
+{% block content %}
+<div class="camo-overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-hidden col-md-2"></div>
+            <div class="col-xs-12 col-md-8" style="color: #fafafa">
+                <h3>{{ post.fixture }}</h3>
+                <small>{{ post.date }} at {{ post.time }}</small>
+                <br />
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'editfixtures' post.pk %}" class="button btn-warning btn-rounded">
+                        <i class="fas fa-edit mr-1"></i>Edit
+                    </a>
+                    <a href="{% url 'deletefixtures' post.pk %}" class="button btn-danger ml-2 btn-rounded">
+                        <i class="fas fa-trash mr-1"></i>Delete
+                    </a>  
+                {% endif %}
+                <hr />
+                <br />
+                {{ post.competition }}
+                <br />
+                <div class="mt-5">
+                    <a href="{% url 'clubnews' %}" class="btn-secondary rounded btn-lg">Back</a> 
+                </div>
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}

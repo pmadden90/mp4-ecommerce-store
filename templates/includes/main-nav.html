@@ -16,18 +16,23 @@
             </div>
         </li>        
 
-<!--TO BE ADDED
+<!--TO BE ADDED-->
+        {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="fixtures-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Fixtures
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="fixtures-link">
-                <a href="" class="dropdown-item">Senior Men</a>
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'addfixtures' %}" class="dropdown-item">Add Fixtures</a>
+                {% endif %}
+                <!--<a href="" class="dropdown-item">Senior Men</a>
                 <a href="" class="dropdown-item">Senior Ladies</a>
-                <a href="" class="dropdown-item">Youth</a>                
-                <a href="" class="dropdown-item">All Fixtures</a>
+                <a href="" class="dropdown-item">Youth</a>-->                
+                <a href="{% url 'fixtures' %}" class="dropdown-item">All Fixtures</a>
             </div>
-        </li>-->
+        </li>
+        {% endif %}
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
