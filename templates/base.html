@@ -69,7 +69,7 @@
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto puy-1 py-lg-0">
-                <form method="GET" actions="/">
+                <form class="form" method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input type="text" class="form-control border border-black rounded-0" name="q" placeholder="Search the shop">
                         <div class="input-group-append">
@@ -105,7 +105,7 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a href="/" class="{% if grand_total %}text-info font-weight-bold{% else %}text-camoblue {% endif %} nav-link">
+                        <a href="{% url 'view_bag' %}" class="{% if grand_total %}text-info font-weight-bold{% else %}text-camoblue {% endif %} nav-link">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-o">
