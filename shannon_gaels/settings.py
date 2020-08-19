@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'products',
     'clubnews',
     'fixtures',
-    'bag',
+    'gearbag',
 ]
 
 MIDDLEWARE = [
