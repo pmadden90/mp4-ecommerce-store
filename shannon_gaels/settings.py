@@ -74,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # NOQA DO NOT REMOVE - REQUIRED BY ALLAUTH
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'gearbag.contexts.bag_contents',
             ],
         },
     },
@@ -156,3 +157,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Stripe
+FREE_DELIVERY_THRESHOLD = 50
+STANDARD_DELIVERY_PERCENTAGE = 10

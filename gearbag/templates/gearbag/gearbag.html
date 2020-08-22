@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% load bag_tools %}
+<!--{ load bag_tools }-->
 
 {% block page_header %}
     <div class="container header-container">
@@ -11,13 +11,16 @@
 {% endblock %}
 
 {% block content %}
+    <div class="" style="text-align: center">
+        <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}</h4>
+    </div>
     <div class="overlay"></div>
     <div class="container mb-2">
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">Shopping Bag</h2>
-                <hr>
+                <h2 class="logo-font mb-4">Your Gearbag</h2>
+                <hr>                
             </div>
         </div>
 
@@ -88,7 +91,7 @@
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                        <p class="my-0">€{ item.product.price | calc_subtotal:item.quantity }</p>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -112,7 +115,7 @@
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                                    <a href="" class="btn btn-black rounded-0 btn-lg">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
@@ -123,7 +126,7 @@
                         </table>
                     </div>
                 {% else %}
-                    <p class="lead mb-5">Your bag is empty.</p>
+                    <p class="lead mb-5">Your gearbag is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
