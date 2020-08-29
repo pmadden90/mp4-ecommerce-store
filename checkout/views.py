@@ -8,7 +8,7 @@ from .models import Order, OrderLineItem
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from products.models import Product
-from bag.contexts import bag_contents
+from gearbag.contexts import bag_contents
 
 import stripe
 import json
@@ -103,7 +103,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-         # Attempt to prefill the form with any info the user maintains in their profile
+         # Attempt to prefill the form with any info the user maintains in their profile # noqa
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
