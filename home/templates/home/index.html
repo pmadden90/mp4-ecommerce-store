@@ -18,9 +18,19 @@
             <div class="my-5">
                 <h4>
                     <a href="{% url 'products' %}" class="shop-now-button btn btn-lg btn-white rounded-0 text-uppercase py-3">Shop Now</a>
-                </h4>
-            </div>
+                </h4>                
+            </div>         
         </div>
+        <div class="col-3"></div>
+        <div class="col-2">
+        {% if request.user.is_authenticated %}
+        {% else %}
+            <div class="my-1" style="color: lightgrey">
+                <p>Register to access fixtures and news</p>        
+            </div>
+        {% endif %} 
+        </div>
+        
     </div>
 </div>
 {% endblock %}
