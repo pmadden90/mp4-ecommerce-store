@@ -26,7 +26,7 @@ SECRET_KEY = 'qkqn8hetzviuzji#p_re52r9wtzjmzm#8n+f-4s2b-qs+2m-m6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ci-mp4-shannongaels.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -131,9 +131,11 @@ if 'DATABASE_URL' in os.environ:
     }
 else:
     DATABASES = {
-        'default': dj_database_url.parse('postgres://qqiojdpbyulvye:0622ef8a3fff84b63e4964418ebceb4c1dd57eba1867740378953b8c84cb8ae9@ec2-46-137-79-235.eu-west-1.compute.amazonaws.com:5432/d15ol68t4l64li'),
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
-    
+    }
 
 
 # Password validation

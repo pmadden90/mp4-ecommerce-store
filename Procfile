@@ -1,0 +1,1 @@
+web: gunicorn ci-mp4-shannongaels.wsgi:application
