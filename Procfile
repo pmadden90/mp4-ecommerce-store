@@ -1,1 +1,1 @@
-web: gunicorn mp4-ecommerce-store.wsgi:application
+web: gunicorn ci-mp4-shannongaels.wsgi:application
