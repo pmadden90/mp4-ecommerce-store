@@ -1,1 +1,1 @@
-web: gunicorn ci-mp4-shannongaels.wsgi:application
+web: gunicorn shannon_gaels.wsgi:application
