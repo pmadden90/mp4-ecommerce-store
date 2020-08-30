@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url # noqa
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'gearbag',
     'checkout',
     'profiles',
+    'about',
 
     # Other
     'crispy_forms'
@@ -123,12 +125,15 @@ WSGI_APPLICATION = 'shannon_gaels.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': dj_database_url.parse('postgres://qqiojdpbyulvye:0622ef8a3fff84b63e4964418ebceb4c1dd57eba1867740378953b8c84cb8ae9@ec2-46-137-79-235.eu-west-1.compute.amazonaws.com:5432/d15ol68t4l64li'),
+        }
+    
 
 
 # Password validation

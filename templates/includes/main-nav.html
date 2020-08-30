@@ -62,8 +62,8 @@
                 About Us
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="about-link">                
-                <a href="" class="dropdown-item">Club History</a>
-                <a href="" class="dropdown-item">Pitches</a>
+                <a href="{% url 'about' %}?category=history" class="dropdown-item">Club History</a>
+                <a href="{% url 'pitches' %}?category=facilities" class="dropdown-item">Pitches</a>
             </div>
         </li>
         <!--This is to be added at a future date for the club once sellable gear has been sourced-->

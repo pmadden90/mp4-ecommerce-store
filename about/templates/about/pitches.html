@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% load static %} {% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %} {% block content %}
+<div class="camo-overlay"></div>
+<div class="container-fluid">
+    <h3 style="text-align: center; color: #fafafa;">Club Facilities</h3>
+    <ul>
+        <div class="row">
+            <div class="col-xs-hidden col-md-2"></div>
+            <div class="col-xs-12 col-md-8" style="color: #fafafa">
+                <h3>Home Pitch</h3>
+                <br />               
+                <hr />
+                <h4>Shannon Gaels, Croghan, Co Roscommon</h4>
+                <p><muted>Eircode:</muted> <strong>F52 KN50</strong></p>
+                <br />
+                <hr />
+                <br />
+                <h3>Training Pitch</h3>
+                <br />               
+                <hr />
+                <h4>Pairc na nGael, Cortober, Co Roscommon</h4>
+                <p><muted>Eircode:</muted> <strong>Not currently available</strong></p>
+                <div class="mt-5">
+                    <a href="{% url 'home' %}" class="btn-secondary rounded btn-lg"> Back </a> 
+                </div>
+            </div>
+        </div>
+  </ul>
+</div>
+
+{% endblock %}
